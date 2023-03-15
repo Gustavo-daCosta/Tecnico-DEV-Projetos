@@ -1,29 +1,27 @@
 /* Fontes importadas */
 @font-face {
-    font-family: 'Inter';
+    font-family: Inter;
     src: url(../assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf);
 }
 
 @font-face {
-    font-family: 'Quicksand';
+    font-family: Quicksand;
     src: url(../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: Titillium-Web;
     src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: Titillium-Web-Bold;
     src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
-    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: Titillium-Web-Black;
     src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Black.ttf);
-    font-weight: bolder;
 }
 
 /* Exemplos de uso das fontes:
@@ -36,8 +34,11 @@ font-family: 'Titillium Web', sans-serif;
 /* Variáveis de ambiente */
 :root {
     --cor-primaria: rgba(27, 20, 38, 1);
+    --cor-secundaria: rgba(249, 170, 1, 1);
     --cor-de-fundo: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
     --cor-da-borda: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+    --altura-section: calc(100vh - 60px);
 }
 
 /* Reset de propriedades */
@@ -117,9 +118,9 @@ header {
     left: -80vw;
     z-index: 101;
     width: 80vw;
-    height: calc(100vh - 60px);
+    height: var(--altura-section);
     background-image: var(--cor-de-fundo);
-    backdrop-filter: blur(45px);
+    backdrop-filter: blur(25px);
     border-image: var(--cor-da-borda);
 
     display: flex;
@@ -165,6 +166,7 @@ header {
     width: 20vw;
     height: 30vh;
     background-image: var(--cor-de-fundo);
+    backdrop-filter: blur(25px);
 
     display: flex;
     flex-direction: column;
@@ -186,35 +188,125 @@ main {
 
 main .banner {
     background-image: url(../assets/images/banner-valorant.png);
-    height: calc(100vh - 60px);
+    height: var(--altura-section);
+}
 
+.banner-flex {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .banner h1 {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: Titillium-Web-Black, sans-serif;
+    font-weight: 900;
     font-size: 40px;
-    font-weight: bolder;
     color: white;
     text-shadow: rgba(253, 66, 85, 1) 1px 0 10px;
+    margin-top: 18px;
 }
 
 .banner button {
     height: 40px;
     width: 170px;
+    margin-bottom: 50px;
     border-radius: 8px;
     border: none;
     background-color: rgba(249, 170, 1, 1);
     color: var(--cor-primaria);
-    font-family: 'Titillium Web', sans-serif;
+    font-family: Titillium-Web-Bold, sans-serif;
     font-size: 24px;
 }
 
-/* DESKTOP (>= 768px) */
+/* JOGOS */
+main .jogos {
+    height: var(--altura-section);
+    background-color: var(--cor-primaria);
+}
+
+.jogos-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.jogos .card {
+    width: 335px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.box-card {
+    width: 100%;
+    height: 30%;
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    align-items: center;
+}
+
+.retangulo-card {
+    width: 190px;
+    height: 40px;
+    background-color: var(--cor-secundaria);
+    transform: skew(-45deg);
+    margin-left: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retangulo-card p {
+    transform: skew(45deg);
+    font-family: Titillium-Web-Bold;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.fifa {
+    background-image: url(../assets/images/fifa-banner.png);
+    alt: "Imagem do jogo fifa 2023";
+}
+
+.csgo {
+    background-image: url(../assets/images/csgo-banner.png);
+    alt: "Imagem do jogo counter strike";
+}
+
+
+/* Tablet (>= 768px) */
 @media screen and (min-width: 768px) {
+    
+}
+
+/* Desktop (>= 1200px) */
+@media screen and (min-width: 1200px) {
+    .grid-layout {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .menu-hamburger, .more-items {
+        display: none;
+    }
+}
+
+
+
+/* DESKTOP (>= 768px) */
+/* @media screen and (min-width: 768px) {
     .grid-layout { width: 80%; }
 
     .header-bottom {
@@ -229,7 +321,7 @@ main .banner {
     }
 
     .header-bottom .menu a:hover {
-        color: #F9AA01;
+        color: var(--cor-secundaria);
         text-decoration: none;
     }
 
@@ -237,10 +329,14 @@ main .banner {
         display: block;
     }
 
+    .redes-sociais {
+        display: static;
+    }
+
     .header-top {
         display: block;
         height: 50px;
-        border-bottom: 1px solid #F9AA01;
+        border-bottom: 1px solid var(--cor-secundaria);
     }
 
     .contacts, .phone, .email {
@@ -252,4 +348,4 @@ main .banner {
     .menu-hamburger, .more-items {
         display: none;
     }
-}
+} */
