@@ -36,7 +36,7 @@ font-family: 'Titillium Web', sans-serif;
     --cor-primaria: rgba(27, 20, 38, 1);
     --cor-secundaria: rgba(249, 170, 1, 1);
     --cor-de-fundo: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
-    --cor-da-borda: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    --cor-da-borda: rgba(255, 255, 255, 0.3);
 
     --altura-section: calc(100vh - 60px);
 }
@@ -99,6 +99,8 @@ header {
     height: 25px;
 }
 
+.header-top { height: 60px; }
+
 .header-bottom {
     height: 60px;
     display: flex;
@@ -145,6 +147,8 @@ header {
     font-size: 15px;
     font-family: 'Inter', sans-serif;
 }
+
+.menu > a:hover { color: orange; }
 
 .menu .redes-sociais {
     display: flex;
@@ -234,7 +238,7 @@ main .jogos {
     height: 100%;
 }
 
-.jogos .card {
+.jogos .card-jogos {
     width: 335px;
     height: 190px;
     background-repeat: no-repeat;
@@ -250,7 +254,7 @@ main .jogos {
     height: 30%;
     backdrop-filter: blur(3px);
     border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--cor-da-borda);
 
     display: flex;
     align-items: center;
@@ -308,17 +312,115 @@ main .progamer {
     border-bottom: 2px solid black;
 }
 
+.progamer .card-progamer {
+    background-image: linear-gradient(to right bottom, rgba(122, 49, 236, 0.2), rgba(47, 7, 109, 0.83));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 230px;
+    height: 300px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.progamer .card-progamer img {
+    width: 100px;
+    height: 100px;
+}
+
+.widget-jogos, .widget-professores { position: relative; }
+
+.widget-jogos .card-killjoy {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+}
+
+.widget-professores .card-jinx {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
 
 /* Tablet (>= 768px) */
-@media screen and (min-width: 768px) {
-    
-}
+@media screen and (min-width: 768px) {}
 
 /* Desktop (>= 1200px) */
 @media screen and (min-width: 1200px) {
     .grid-layout {
         width: 80%;
         max-width: 1200px;
+    }
+
+    .header-top {
+        display: flex;
+
+    }
+
+    .header-top .contacts {
+        width: 410px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-top .contacts > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contacts .email { width: 190px; }
+    .contacts .phone { width: 140px; }
+
+    .header-top .contacts, .contacts .phone, .contacts .email {
+        display: flex;
+    }
+
+    .header-top .redes-sociais {
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 8px;
+    }
+
+    .header-bottom .menu {
+        width: 410px;
+        height: auto;
+        position: static;
+        opacity: 1;
+        z-index: none;
+        transition: none;
+        background-image: none;
+        background-color: transparent;
+        backdrop-filter: none;
+
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-bottom .menu > a {
+        border: none;
+    }
+
+    .header-bottom .user-menu {
+        position: static;
+        width: 140px;
+        flex-direction: row;
+        height: auto;
+        background-color: transparent;
+        background-image: none;
+        opacity: 1;
+        transition: none;
+    }
+
+    .header-bottom .logo {
+        width: 200px;
+        height: 55px;
     }
 
     /* Esconde os elementos desnecessários */
@@ -328,50 +430,3 @@ main .progamer {
         display: none;
     }
 }
-
-
-
-/* DESKTOP (>= 768px) */
-/* @media screen and (min-width: 768px) {
-    .grid-layout { width: 80%; }
-
-    .header-bottom {
-        height: 90px;
-    }
-    
-    .header-top { display: none; }
-
-    .header-bottom .menu a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .header-bottom .menu a:hover {
-        color: var(--cor-secundaria);
-        text-decoration: none;
-    }
-
-    .menu, .user-menu {
-        display: block;
-    }
-
-    .redes-sociais {
-        display: static;
-    }
-
-    .header-top {
-        display: block;
-        height: 50px;
-        border-bottom: 1px solid var(--cor-secundaria);
-    }
-
-    .contacts, .phone, .email {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .menu-hamburger, .menu-user {
-        display: none;
-    }
-} */
