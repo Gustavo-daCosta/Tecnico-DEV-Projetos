@@ -296,15 +296,27 @@ main .progamer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+}
+
+.progamer .card-flex {
+    padding: 0 20px;
+    margin: auto 0;
+}
+
+.progamer .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .progamer h1 {
-    font-family: Titillium-Web-Black;
+    font-family: Titillium-Web-Black, sans-serif;
     font-weight: 900;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 70px 0 20px 0;
+    margin-bottom: 20px;
 }
 
 .progamer hr {
@@ -313,16 +325,17 @@ main .progamer {
 }
 
 .progamer .card-progamer {
-    background-image: linear-gradient(to right bottom, rgba(122, 49, 236, 0.2), rgba(47, 7, 109, 0.83));
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: white;
     width: 230px;
     height: 300px;
     border-radius: 8px;
+    padding-top: 10px;
+    gap: 20px;
+    background-image: linear-gradient(to right bottom, rgba(122, 49, 236, 0.3), rgba(47, 7, 109, 0.83));
     border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
 }
 
 .progamer .card-progamer img {
@@ -330,21 +343,99 @@ main .progamer {
     height: 100px;
 }
 
+.progamer .card-progamer h3 {
+    font-family: Titillium-Web-Black;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: white;
+    text-shadow: rgba(198, 165, 229, 1) 1px 0 10px;
+}
+
+.progamer .card-progamer p {
+    font-family: Quicksand;
+    font-size: 13px;
+    color: white;
+    text-align: justify;
+}
+
 .widget-jogos, .widget-professores { position: relative; }
 
 .widget-jogos .card-killjoy {
     position: absolute;
     z-index: 2;
-    top: 0;
+    top: 135px;
     right: 0;
 }
 
 .widget-professores .card-jinx {
     position: absolute;
     z-index: 2;
-    top: 0;
+    top: 110px;
     left: 0;
 }
+
+/* NOTÍCIAS */
+main .noticias {
+    background-image: url(../assets/images/noticias/background-noticias.png);
+    height: 3675px;
+
+    /* avaliar se o flex é necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noticias .titulo {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noticias .titulo h1 {
+    font-family: Titillium-Web-Black;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+.noticias .titulo hr {
+    border-color: var(--cor-secundaria);
+    width: 50vw;
+}
+
+.noticia-flex {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticias .card-noticia {
+    height: 390px;
+    background-image: linear-gradient(to bottom right, rgba(37, 26, 52, 0.34), rgba(5, 1, 12, 0.79));
+    border-radius: 8px;
+    margin-top: 45px;
+}
+
+.card-noticia h3 {
+    padding: 0 20px;
+    color: white;
+    font-family: Titillium-Web-Bold;
+    font-size: 24px;
+}
+
+.card-noticia p {
+    padding: 0 20px;
+    color: white;
+    font-family: Quicksand, sans-serif;
+    font-size: 16px;
+}
+
+.card-noticia img { width: 100%; }
 
 
 /* Tablet (>= 768px) */
