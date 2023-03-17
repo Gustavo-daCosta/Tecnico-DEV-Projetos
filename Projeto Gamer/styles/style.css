@@ -64,9 +64,7 @@ font-family: 'Titillium Web', sans-serif;
     opacity: 1 !important;
 }
 
-body {
-    background-color: darkslateblue;
-}
+body { background-color: darkslateblue; }
 
 /* ==== HEADER ==== */
 
@@ -191,7 +189,9 @@ main {
 }
 
 main .banner {
-    background-image: url(../assets/images/banner-valorant.png);
+    background-image: url(../assets/images/banner-valorant-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: var(--altura-section);
 }
 
@@ -437,6 +437,84 @@ main .noticias {
 
 .card-noticia img { width: 100%; }
 
+/* FOOTER */
+footer {
+    height: 1530px;
+    background-image: url(../assets/images/backgroung_footer.png);
+}
+
+footer .footer-titulo h2 {
+    font-family: Titillium-Web-Black;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    color: white;
+}
+
+footer .footer-titulo hr {
+    border-bottom: 3px solid var(--cor-secundaria);
+    width: 100%;
+}
+
+footer .footer-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-inicio p {
+    color: white;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+}
+
+footer .redes-sociais {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .redes-sociais .rede-social-box {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--cor-secundaria);
+}
+
+footer .links-uteis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links-uteis .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
+}
+
+.links-uteis .link {
+    display: flex;
+    align-items: center;
+    /* width: 90px; */
+    color: white;
+    gap: 0 10px;
+}
+
+.links-uteis .link hr {
+    border: 1px solid var(--cor-secundaria);
+    width: 10px;
+    height: 1px;
+}
+
+.links-uteis .link p {
+    font-family: Titillium-Web;
+    font-size: 16px;
+}
+
+.contatos {}
+
 
 /* Tablet (>= 768px) */
 @media screen and (min-width: 768px) {}
@@ -450,7 +528,7 @@ main .noticias {
 
     .header-top {
         display: flex;
-
+        border-bottom: 1px solid var(--cor-secundaria);
     }
 
     .header-top .contacts {
@@ -478,6 +556,8 @@ main .noticias {
         justify-content: space-between;
         margin-right: 8px;
     }
+
+    .header-bottom { height: 75px; }
 
     .header-bottom .menu {
         width: 410px;
@@ -519,5 +599,12 @@ main .noticias {
     .menu .phone, .menu .email,
     .menu .redes-sociais {
         display: none;
+    }
+
+    /* MAIN */
+    /* BANNER */
+
+    main .banner {
+        background-image: url(../assets/images/banner-valorant-desktop.png);
     }
 }
