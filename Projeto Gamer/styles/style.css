@@ -439,8 +439,36 @@ main .noticias {
 
 /* FOOTER */
 footer {
-    height: 1530px;
+    height: 1230px;
     background-image: url(../assets/images/backgroung_footer.png);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-gradient {
+    position: absolute;
+    top: -3px;
+    z-index: 11;
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(27, 20, 38, 0.1));
+}
+
+.footer-flex {
+    height: 100%;
+    padding: 60px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 12;
+}
+
+.footer-titulo, .footer-inicio, .redes-sociais,
+.links-uteis, .contatos, .newsletter {
+    width: 100%;
 }
 
 footer .footer-titulo h2 {
@@ -452,13 +480,22 @@ footer .footer-titulo h2 {
 
 footer .footer-titulo hr {
     border-bottom: 3px solid var(--cor-secundaria);
-    width: 100%;
+    width: calc(100% / 3);
+    margin-bottom: 45px;
 }
 
 footer .footer-inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+
+    /* background-image: linear-gradient(from top to bottom right, rgba(27, 20, 38, 0.5), rgba(27, 20, 38, 0.1)); */
+}
+
+.footer-inicio .logo {
+    width: 130px;
+    height: 38px;
 }
 
 .footer-inicio p {
@@ -473,8 +510,8 @@ footer .redes-sociais {
 }
 
 footer .redes-sociais .rede-social-box {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -497,7 +534,6 @@ footer .links-uteis {
 .links-uteis .link {
     display: flex;
     align-items: center;
-    /* width: 90px; */
     color: white;
     gap: 0 10px;
 }
@@ -510,10 +546,62 @@ footer .links-uteis {
 
 .links-uteis .link p {
     font-family: Titillium-Web;
+    font-size: 18px;
+}
+
+.contatos .contato {
+    font-family: Titillium-Web-Bold;
+    font-size: 17px;
+}
+
+.contato .contato-topico { color: var(--cor-secundaria); }
+.contato .contato-descricao { color: white; }
+
+
+footer .newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsletter .newsletter-form {
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsletter-form .email-input {
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(239, 239, 239, 0.5), rgba(239, 239, 239, 0.2));
+}
+
+.newsletter-form .send-button {
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cor-secundaria);
+    font-family: Titillium-Web-Bold;
+    font-size: 24px;
+}
+
+.newsletter-form .email-input::placeholder {
+    color: white;
+    font-family: Titillium-Web;
     font-size: 16px;
 }
 
-.contatos {}
+footer .copyright-text {
+    font-family: Titillium-Web;
+    color: white;
+    font-size: 16px;
+}
 
 
 /* Tablet (>= 768px) */
