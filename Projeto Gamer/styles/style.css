@@ -603,6 +603,25 @@ footer .copyright-text {
     font-size: 16px;
 }
 
+/* Seta para voltar ao início */
+#up-button {
+    height: 40px;
+    width: 40px;
+    padding-top: 2px;
+    border-radius: 20px;
+    background-color: var(--cor-secundaria);
+    border: 0.1px solid var(--cor-primaria);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    z-index: 15;
+    right: 10px;
+    bottom: 10px;
+}
+
 
 /* Tablet (>= 768px) */
 @media screen and (min-width: 768px) {}
