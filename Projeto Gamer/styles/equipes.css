@@ -217,8 +217,6 @@ main{
     width: 100%;
     height: 460px;
     border: 1px solid grey;
-    /* border-image: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); */
-    /* border-image-slice: 1; */
     background-image: linear-gradient(to right bottom,  rgba(27, 20, 38, 0.6), rgba(60, 3, 65, 0.38));
     border-radius: 8px;
     backdrop-filter: blur(10px);   
@@ -249,7 +247,7 @@ main{
     width: 100%;
     height: 40px;
     border: 1px solid grey;
-    background-image: linear-gradient(to right , rgba(255, 255, 255, 0.6), rgba(239, 239, 239, 0.1) );
+    background: linear-gradient(to right , rgba(255, 255, 255, 0.6), rgba(239, 239, 239, 0.1)) content-box;
     border-radius: 8px;
 }
 
@@ -287,8 +285,6 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid transparent; */
-    /* background: linear-gradient(to right bottom, red, blue) content-box, linear-gradient(to top left, green, yellow); */
 }
 
 .form-file-input #foto-label {
@@ -331,8 +327,11 @@ button {
 /* TABELA */
 .tabela {
     width: 100%;
-    height: 410px;
-    border: 1px solid yellow;
+    height: 380px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .classificacoes {
@@ -352,7 +351,7 @@ button {
 .classificacoes .id {
     display: flex;
     justify-content: center;
-    width: 15%;
+    width: 10%;
 }
 
 .classificacoes .nome {
@@ -370,6 +369,13 @@ button {
     border: 2px solid var(--cor-secundaria);
 }
 
+.equipes-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /* BOX TABELA */
 .equipe-box {
     width: 100%;
@@ -382,15 +388,22 @@ button {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    font-family: Titillium-Web-Bold;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
 }
 
-.equipe-box .id {}
+.vertical-divider {
+    height: 60%;
+    border: 2px solid var(--cor-secundaria);
+}
 
-.equipe-box .nome {}
-
-.equipe-box .foto {}
-
-.equipe-box .apagar-equipe {}
+.equipe-box .id { margin-left: 15px; }
+.equipe-box .nome { width: 35%; }
+.equipe-box .apagar-equipe { margin-right: 15px; }
 
 
 /* FOOTER */
