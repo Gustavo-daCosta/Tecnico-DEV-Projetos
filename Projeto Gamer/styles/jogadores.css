@@ -289,7 +289,7 @@ button {
 }
 
 
-/* TABELA */
+/* TABELA DE JOGADORES*/
 .tabela {
     width: 100%;
     height: 380px;
@@ -320,12 +320,12 @@ button {
 }
 
 .classificacoes .nome {
-    width: 50%;
-    padding-left: 10px;
+    width: 30%;
+    /* padding-left: 10px; */
 }
 
-.classificacoes .foto {
-    width: 35%;
+.classificacoes .email {
+    width: 50%;
     padding-left: 5px;
 }
 
@@ -358,7 +358,6 @@ button {
     font-family: Titillium-Web-Bold;
     font-size: 20px;
     color: white;
-    text-transform: uppercase;
 }
 
 .vertical-divider {
@@ -366,9 +365,8 @@ button {
     border: 2px solid var(--cor-secundaria);
 }
 
-.equipe-box .id { margin-left: 15px; }
-.equipe-box .nome { width: 35%; }
-.equipe-box .apagar-equipe { margin-right: 15px; }
+.jogador-box .id { margin-left: 15px; }
+.jogador-box .apagar-jogador { margin-right: 15px; }
 
 
 /* FOOTER */
