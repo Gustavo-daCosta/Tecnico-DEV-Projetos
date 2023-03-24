@@ -324,6 +324,13 @@ main .progamer {
     border-bottom: 2px solid black;
 }
 
+.progamer .widgets-progamer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1030px;
+}
+
 .progamer .card-progamer {
     display: flex;
     flex-direction: column;
@@ -712,6 +719,86 @@ footer .copyright-text {
     /* BANNER */
 
     main .banner {
+        padding-top: 60px;
         background-image: url(../assets/images/banner-valorant-desktop.png);
+    }
+
+    .banner h1 { font-size: 80px; }
+    .banner button { width: 200px; }
+
+    /* JOGOS */
+    main .jogos-flex { flex-direction: row; }
+
+    .jogos .card-jogos {
+        width: 550px;
+        height: 310px;
+    }
+
+    .jogos .card-jogos .retangulo-card {
+        width: 250px;
+        height: 40px;
+    }
+
+    /* PROGAMER */
+
+    .progamer {
+        height: 700px;
+    }
+
+    .progamer .widgets-progamer {
+        display: flex;
+        flex-direction: row;
+        width: 1000px;
+    }
+
+    .progamer .card-progamer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 230px;
+        height: 300px;
+        border-radius: 8px;
+        padding-top: 10px;
+        gap: 20px;
+        background-image: linear-gradient(to right bottom, rgba(122, 49, 236, 0.3), rgba(47, 7, 109, 0.83));
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5px);
+    }
+    
+    .progamer .card-progamer img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .progamer .card-progamer h3 {
+        font-family: Titillium-Web-Black;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: white;
+        text-shadow: rgba(198, 165, 229, 1) 1px 0 10px;
+    }
+    
+    .progamer .card-progamer p {
+        font-family: Quicksand;
+        font-size: 13px;
+        color: white;
+        text-align: justify;
+    }
+    
+    .widget-jogos, .widget-professores { position: relative; }
+    
+    .widget-jogos .card-killjoy {
+        position: absolute;
+        z-index: 2;
+        top: 135px;
+        right: 0;
+    }
+    
+    .widget-professores .card-jinx {
+        position: absolute;
+        z-index: 2;
+        top: 110px;
+        left: 0;
     }
 }
