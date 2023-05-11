@@ -1,8 +1,10 @@
 /* Import de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Uso das fontes:
 titulo: 'Bebas Neue', cursive;
+subtitulo: 'Poppins', sans-serif;
 texto: 'DM Sans', sans-serif
 */
 
@@ -15,7 +17,7 @@ texto: 'DM Sans', sans-serif
 
 /* Configurações gerais */
 .grid-layout {
-  padding: 0 2vw;
+  padding: 0 3vw;
   margin: auto 0;
 }
 
@@ -27,7 +29,8 @@ texto: 'DM Sans', sans-serif
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(66, 0, 128, 0.9);
+  background-image: linear-gradient(to left bottom, rgb(47, 34, 171), rgb(139, 76, 160));
+  background-attachment: fixed;
 }
 
 header .header-top {
@@ -119,5 +122,122 @@ header .search-bar {
   font-weight: 400;
 }
 
+/* MAIN */
+/* BANNER */
+main .banner {
+  padding-top: 8vh;
+  width: 100%;
+  height: calc(100vh - 105px);
 
+  background-image: linear-gradient(to left bottom, rgb(47, 34, 171), rgb(139, 76, 160));
+  background-attachment: fixed;
+}
 
+.banner .banner-info {
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.banner .banner-info h1 {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: 'DM Sans', cursive;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.banner .banner-info h3 {
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.banner .banner-info button {
+  width: 45%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(255, 195, 0);
+  color: white;
+  font-family: 'DM Sans', cursive;
+  font-weight: 700;
+}
+
+.banner .image-slider .banner-notebook {
+  width: 100vw;
+  position: relative;
+  /* z-index: -1; */
+}
+
+.image-slider {
+  /* background-color: rgba(0, 0, 255, 0.5); */
+  position: absolute;
+}
+
+.image-slider .buttons {
+  /* background-color: rgba(154, 205, 50, 0.7); */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4vw;
+  position: absolute;
+  top: 60%;
+}
+
+.image-slider .buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 10vw;
+
+  border-radius: 50%;
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+}
+
+.image-slider .buttons img {
+  width: 90%;
+  height: 90%;
+}
+
+.image-slider .buttons .back-button img { transform: rotate(180deg); }
+
+/* Section Benefícios */
+.benefits {
+  height: 86vh;
+  padding: 3vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(253, 242, 255);
+
+  position: relative;
+  z-index: 0;
+}
+
+.benefits article {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.benefits article .description {
+  width: 75%;
+}
+
+.benefits article .description h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.benefits article .description p {
+  font-family: 'DM Sans', sans-serif;
+  color: grey;
+}
+
+/* rgb(200, 109, 215) */
