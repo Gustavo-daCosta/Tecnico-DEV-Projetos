@@ -241,3 +241,71 @@ main .banner {
 }
 
 /* rgb(200, 109, 215) */
+
+/* Section Produtos */
+.products {
+  padding: calc(2vh + 50px) 0;
+}
+
+.products .products-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.products .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 20%;
+}
+
+.products .info h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  letter-spacing: 0.8px;
+  color: rgb(44, 44, 44);
+}
+
+.products .info h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: rgb(44, 44, 44);
+}
+
+.products .info p {
+  font-family: 'DM Sans', sans-serif;
+  color: gray;
+  text-align: center;
+}
+
+.products .product-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-category p:first-of-type { padding-top: 10%; }
+.product-category p:last-of-type { padding-bottom: 25%; }
+
+.products .product-category p {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.products .product-category .example {
+  color: grey;
+}
+
+.products .product-category .see-all {
+  color:rgb(44, 44, 44);
+  font-weight: 500;
+}
+
+.products .product-category .computer { width: 65%; }
+
+.products .product-category .cellphone { width: 35%; }
