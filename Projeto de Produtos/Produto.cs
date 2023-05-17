@@ -10,23 +10,25 @@ namespace Projeto_de_Produtos
         private Usuario CadastradoPor { get; set; } = new Usuario();
         private List<Produto> ListaDeProdutos { get; set; } = new List<Produto>();
 
-        public string Cadastrar(Produto produto) {
+        public bool Cadastrar(Produto produto) {
             if (ListaDeProdutos.Contains(produto)) {
-                return "Produto já cadastrado!";
+                return false;
             } else {
                 ListaDeProdutos.Add(produto);
-                return "Produto cadastrado com sucesso!";
+                return true;
             }
         }
 
-        public string Deletar(Produto produto) {
+        public bool Deletar(Produto produto) {
             if (ListaDeProdutos.Contains(produto)) {
                 ListaDeProdutos.Remove(produto);
-                return "Produto deletado com sucesso!";
+                return true;
             } else {
-                return "Produto não encontrado! Não foi possível deletar.";
+                return false;
             }
         }
+
+        public bool Atualizar() { return false; }
 
         public List<Produto> Listar() => ListaDeProdutos;
     }
