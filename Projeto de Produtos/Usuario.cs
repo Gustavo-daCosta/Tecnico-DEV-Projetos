@@ -2,11 +2,11 @@ namespace Projeto_de_Produtos
 {
     public class Usuario
     {
-        private int Codigo { get; set; }
-        private string? Nome { get; set; }
-        private string? Email { get; set; }
-        private string? Senha { get; set; }
-        private DateTime DataCadastro { get; set; } = DateTime.Now;
+        public int Codigo { get; set; }
+        public string? Nome { get; set; }
+        public string? Email { get; set; }
+        public string? Senha { get; set; }
+        public DateTime DataCadastro { get; set; } = DateTime.Now;
         public List<Usuario> ListaDeUsuarios {get; private set;} = new List<Usuario>();
 
         public Usuario() {}
@@ -19,7 +19,7 @@ namespace Projeto_de_Produtos
         }
 
         public void Cadastrar() {
-            Console.WriteLine(" === Cadastrar usuário ===");
+            Funcionalidades.Titulo(" === Cadastrar usuário ===");
 
             Console.Write($"Digite o nome do usuário: ");
             string nome = Console.ReadLine()!;
@@ -48,7 +48,7 @@ namespace Projeto_de_Produtos
                 Funcionalidades.Mensagem($"O email {usuario.Email} já foi cadastrado em outra conta!");
                 goto email;
             } else {
-                ListaDeUsuarios.Add(usuario);
+                usuario.ListaDeUsuarios.Add(usuario);
                 Funcionalidades.Mensagem($"O usuário foi cadastrado com sucesso!", ConsoleColor.Green);
             }
         }
@@ -57,19 +57,40 @@ namespace Projeto_de_Produtos
 
         public void Deletar(Usuario usuario) {
             menu:
-            Console.Clear();
-            Console.WriteLine($" === DELETAR USUÁRIO ===");
+            Funcionalidades.Titulo($" === DELETAR USUÁRIO ===");
             Console.WriteLine($"Devemos fazer uma verificação antes de deletar seu usuário.");
             Console.Write($"Digite sua senha: ");
             string senha = Console.ReadLine()!;
 
             if (senha == usuario.Senha) {
-                ListaDeUsuarios.Remove(usuario);
+                usuario.ListaDeUsuarios.Remove(usuario);
                 Funcionalidades.Mensagem($"Usuário deletado com sucesso! Sentiremos sua falta... 😢", ConsoleColor.Green);
             } else {
                 Funcionalidades.Mensagem($"A senha digitada está incorreta.");
                 goto menu;
             }
+        }
+
+        public void Listar(Usuario usuarioLista) {
+            Funcionalidades.Titulo($" === Lista de Usuários ===");
+            int i = 0;
+            foreach (Usuario usuario in usuarioLista.ListaDeUsuarios) {
+                i++;
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"\n{i}º Usuário:");
+                Console.ResetColor();
+                Console.WriteLine($"Código: {usuario.Codigo} - Nome: {usuario.Nome}");
+                Console.WriteLine($"Email: {usuario.Email}");
+            }
+        }
+
+        public bool UsuarioExiste(Usuario usuario, string email, string senha) {
+            foreach (Usuario usuarioListado in usuario.ListaDeUsuarios) {
+                if (usuarioListado.Email == email && usuarioListado.Senha == senha) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private int GerarCodigo() {

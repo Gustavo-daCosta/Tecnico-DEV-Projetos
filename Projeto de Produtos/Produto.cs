@@ -30,6 +30,6 @@ namespace Projeto_de_Produtos
 
         public bool Atualizar() { return false; }
 
-        public List<Produto> Listar() => ListaDeProdutos;
+        // public List<Produto> Listar() {};
     }
 }

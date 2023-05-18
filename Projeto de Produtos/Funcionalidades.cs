@@ -15,5 +15,12 @@ namespace Projeto_de_Produtos
             Console.ReadLine();
             Console.Clear();
         }
+
+        public static void Titulo(string mensagem, ConsoleColor color = ConsoleColor.DarkMagenta) {
+            Console.Clear();
+            Console.ForegroundColor = color;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
+        }
     }
 }
