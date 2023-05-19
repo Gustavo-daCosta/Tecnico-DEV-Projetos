@@ -52,7 +52,10 @@ namespace Projeto_de_Produtos
             }
         }
 
-        public void Listar(bool listarComOpcoes = false) {
+        public int Listar(bool listarComOpcoes = false) {
+            if (!ListaDeMarcas.Any()) {
+                return 0;
+            }
             int i = 0;
             foreach (Marca marca in ListaDeMarcas) {
                 i++;
@@ -61,6 +64,7 @@ namespace Projeto_de_Produtos
                 }
                 Console.WriteLine(marca.NomeMarca);
             }
+            return ListaDeMarcas.Count();
         }
 
         public bool MarcaExiste(string nomeMarca) {

@@ -11,11 +11,22 @@ namespace Projeto_de_Produtos
             while (desejaContinuar) {
                 if (Logado) {
                     int opcao = GerarMenu();
+
+                    Produto produto = new Produto();
+
                     switch (opcao) {
                         case 1:
+                            produto.Cadastrar(usuario);
+                            break;
+                        case 2:
+                            produto.Listar();
+                            break;
+                        case 3:
+                            produto.Deletar();
                             break;
                     }
                 } else {
+                    menuCadastro:
                     int opcao = MenuCadastro();
                     
                     switch (opcao) {
@@ -23,12 +34,15 @@ namespace Projeto_de_Produtos
                             usuario.Cadastrar();
                             break;
                         case 2:
-                            Logar(usuario);
-                            Logado = true;
-                            break;
+                            bool conseguiuLogar = Logar(usuario);
+                            if (conseguiuLogar) {
+                                Logado = true;
+                                break;
+                            } else {
+                                goto menuCadastro;
+                            }
                         default:
                             Funcionalidades.Mensagem($"Saindo do programa...", ConsoleColor.Blue);
-                            Environment.Exit(1);
                             break;
                     }
                 }
@@ -40,10 +54,10 @@ namespace Projeto_de_Produtos
             Funcionalidades.Titulo(" === LOG IN === ");
             Console.WriteLine(@$"Selecione uma opção:
 
-            [1] - Cadastrar nova conta
-            [2] - Logar em conta pré-existente
+    [1] - Cadastrar nova conta
+    [2] - Logar em conta pré-existente
 
-            [0] - Sair
+    [0] - Sair
             ");
             Console.Write($"Digite a opção desejada: ");
             int opcao = int.Parse(Console.ReadLine()!);
@@ -55,7 +69,7 @@ namespace Projeto_de_Produtos
             return opcao;
         }
 
-        public void Logar(Usuario usuario) {
+        public bool Logar(Usuario usuario) {
             logar:
             Funcionalidades.Titulo(" === Logar usuário ===");
 
@@ -66,25 +80,43 @@ namespace Projeto_de_Produtos
             string senha = Console.ReadLine()!;
 
             // Se não funcionar, passar o usuário para o UsuarioExiste e utilizar a lista de usuarios do objeto usuario (usuario.ListaDeUsuarios)
-            if (!usuario.UsuarioExiste(usuario, email, senha)) { // Se usuário não existe
+            if (!usuario.UsuarioExiste(email, senha)) { // Se usuário não existe
+                menu:
                 Funcionalidades.Mensagem($"O email ou a senha estão incorretos! Tente novamente");
-                goto logar;
+                Console.WriteLine(@$"Você deseja voltar ao menu ou tentar novamente?
+    [1] - Tentar novamente
+    [2] - Voltar ao menu
+                ");
+                int opcao = int.Parse(Console.ReadLine()!);
+
+                if (opcao != 1 && opcao != 2) {
+                    Funcionalidades.Mensagem($"Valor inválido!");
+                    goto menu;
+                }
+                if (opcao == 1) {
+                  goto logar;
+                } else {
+                    return false;
+                }
             }
+            return true;
         }
 
         public int GerarMenu() {
             menu:
             Funcionalidades.Titulo($" === MENU DE OPÇÕES ===");
             Console.WriteLine(@$"
-            [1] Cadastrar produto
-            [2] Listar produtos
-            [3] Remover produto
-            ---------------------
-            [4] Cadastrar marca
-            [5] Listar marcas
-            [6] Remover marca
-            ---------------------
-            [0] Sair da conta");
+    -------- PRODUTO ----------
+    [1] Cadastrar produto
+    [2] Listar produtos
+    [3] Remover produto
+    --------- MARCA -----------
+    [4] Cadastrar marca
+    [5] Listar marcas
+    [6] Remover marca
+    --------- CONTA -----------
+    [0] Configurações da conta
+            ");
             Console.Write($"Digite a opção desejada: ");
             int opcao = int.Parse(Console.ReadLine()!);
 

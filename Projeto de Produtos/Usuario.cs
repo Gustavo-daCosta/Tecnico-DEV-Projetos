@@ -48,7 +48,7 @@ namespace Projeto_de_Produtos
                 Funcionalidades.Mensagem($"O email {usuario.Email} já foi cadastrado em outra conta!");
                 goto email;
             } else {
-                usuario.ListaDeUsuarios.Add(usuario);
+                ListaDeUsuarios.Add(usuario);
                 Funcionalidades.Mensagem($"O usuário foi cadastrado com sucesso!", ConsoleColor.Green);
             }
         }
@@ -84,8 +84,8 @@ namespace Projeto_de_Produtos
             }
         }
 
-        public bool UsuarioExiste(Usuario usuario, string email, string senha) {
-            foreach (Usuario usuarioListado in usuario.ListaDeUsuarios) {
+        public bool UsuarioExiste(string email, string senha) {
+            foreach (Usuario usuarioListado in ListaDeUsuarios) {
                 if (usuarioListado.Email == email && usuarioListado.Senha == senha) {
                     return true;
                 }
