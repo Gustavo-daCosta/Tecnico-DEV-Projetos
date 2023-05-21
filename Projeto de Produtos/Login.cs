@@ -13,16 +13,36 @@ namespace Projeto_de_Produtos
                     int opcao = GerarMenu();
 
                     Produto produto = new Produto();
+                    Marca marca = new Marca();
 
                     switch (opcao) {
                         case 1:
-                            produto.Cadastrar(usuario);
+                            produto.Cadastrar(produto, usuario);
                             break;
                         case 2:
                             produto.Listar();
                             break;
                         case 3:
-                            produto.Deletar();
+                            produto.Deletar(produto);
+                            break;
+                        case 4:
+                            marca.Cadastrar(marca);
+                            break;
+                        case 5:
+                            marca.Listar();
+                            break;
+                        case 6:
+                            marca.Deletar(marca);
+                            break;
+                        case 7:
+                            usuario.Deletar(usuario);
+                            break;
+                        case 8:
+                            Funcionalidades.Mensagem($"Saindo da sua conta...", ConsoleColor.Blue);
+                            Logado = false;
+                            break;
+                        default:
+                            Funcionalidades.Mensagem($"Valor inválido! Tente novamente.");
                             break;
                     }
                 } else {
@@ -99,6 +119,7 @@ namespace Projeto_de_Produtos
                     return false;
                 }
             }
+            Funcionalidades.Mensagem($"Login concluído!");
             return true;
         }
 
@@ -115,12 +136,15 @@ namespace Projeto_de_Produtos
     [5] Listar marcas
     [6] Remover marca
     --------- CONTA -----------
-    [0] Configurações da conta
+    [7] Deletar conta
+    [8] Sair da conta
+    ---------------------------
+    [0] Encerrar programa
             ");
             Console.Write($"Digite a opção desejada: ");
             int opcao = int.Parse(Console.ReadLine()!);
 
-            if (opcao < 0 || opcao > 6) {
+            if (opcao < 0 || opcao > 8) {
                 Funcionalidades.Mensagem($"Opção inválida digitada! Tente novamente.");
                 goto menu;
             }

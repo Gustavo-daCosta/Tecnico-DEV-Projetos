@@ -5,31 +5,26 @@ namespace Projeto_de_Produtos
     public class Marca
     {
         private int Codigo { get; set; }
-        private string? NomeMarca { get; set; }
+        private string? Nome { get; set; }
         private DateTime DataCadastro { get; set; } = DateTime.Now;
         public List<Marca> ListaDeMarcas { get; private set; } = new List<Marca>();
 
-        public Marca() {}
+        public void Cadastrar(Marca marca) {
+            marca.Codigo = GerarCodigo(marca);
 
-        public Marca(string nomeMarca) {
-            Codigo = GerarCodigo();
-            NomeMarca = nomeMarca;
-        }
-
-        public void Cadastrar() {
+            menu:
             Funcionalidades.Titulo(" === Cadastrar marca ===");
 
-            nomeMarca:
             Console.Write($"Digite o nome da marca: ");
-            string nome = Console.ReadLine()!;
+            marca.Nome = Console.ReadLine()!;
 
-            Marca marca = new Marca(nome);
+            // Marca marca = new Marca(nome);
 
-            if (ListaDeMarcas.Exists(x => x.NomeMarca!.ToLower() == nome.ToLower())) {
+            if (marca.ListaDeMarcas.Exists(x => x.Nome!.ToLower() == marca.Nome.ToLower())) {
                 Funcionalidades.Mensagem($"Uma marca com o nome {marca} já foi cadastrada anteriormente!");
-                goto nomeMarca;
+                goto menu;
             } else {
-                ListaDeMarcas.Add(marca);
+                marca.ListaDeMarcas.Add(marca);
                 Funcionalidades.Mensagem($"A marca foi cadastrada com sucesso!", ConsoleColor.Green);
             }
         }
@@ -39,7 +34,7 @@ namespace Projeto_de_Produtos
         public void Deletar(Marca marca) {
             menu:
             Funcionalidades.Titulo($" === DELETAR MARCA ===");
-            Listar(listarComOpcoes: true);
+            Listar(marca, listarComOpcoes: true);
             Console.Write($"Digite a opção desejada: ");
             int opcao = int.Parse(Console.ReadLine()!);
             
@@ -47,41 +42,38 @@ namespace Projeto_de_Produtos
                 Funcionalidades.Mensagem($"Opção inválida! Tente novamente...");
                 goto menu;
             } else if (opcao > 0) {
-                marca.ListaDeMarcas.Remove(marca);
+                marca.ListaDeMarcas.RemoveAt(opcao - 1);
                 Funcionalidades.Mensagem($"Marca deletada com sucesso!", ConsoleColor.Green);
             }
         }
 
-        public int Listar(bool listarComOpcoes = false) {
-            if (!ListaDeMarcas.Any()) {
-                return 0;
-            }
+        public void Listar(Marca marca, bool listarComOpcoes = false) {
             int i = 0;
-            foreach (Marca marca in ListaDeMarcas) {
+            foreach (Marca _marca in marca.ListaDeMarcas) {
                 i++;
                 if (listarComOpcoes) {
-                    Console.Write(listarComOpcoes ? $"[{i}] - " : $"{i}º Marca ");
+                    Console.Write(listarComOpcoes ? $"[{i}] - " : "");
                 }
-                Console.WriteLine(marca.NomeMarca);
+                Console.WriteLine($" Código: {_marca.Codigo} - Nome: {_marca.Nome}");
             }
-            return ListaDeMarcas.Count();
+            Console.WriteLine(listarComOpcoes ? $"\n[0] - Voltar ao menu" : "");
         }
 
-        public bool MarcaExiste(string nomeMarca) {
-            foreach (Marca marca in ListaDeMarcas) {
-                if (marca.NomeMarca!.ToLower() == nomeMarca.ToLower()) {
+        public bool MarcaExiste(Marca marca) {
+            foreach (Marca _marca in marca.ListaDeMarcas) {
+                if (marca.Nome!.ToLower() == _marca.Nome!.ToLower()) {
                     return true;
                 }
             }
             return false;
         }
 
-        private int GerarCodigo() {
+        private int GerarCodigo(Marca marca) {
             Random random = new Random();
             codigo:
             int codigo = random.Next(1000, 9999);
 
-            if (ListaDeMarcas.Exists(x => x.Codigo == codigo)) {
+            if (marca.ListaDeMarcas.Exists(x => x.Codigo == codigo)) {
                 goto codigo;
             }
             return codigo;
