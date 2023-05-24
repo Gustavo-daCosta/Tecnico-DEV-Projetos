@@ -8,12 +8,18 @@ subtitulo: 'Poppins', sans-serif;
 texto: 'DM Sans', sans-serif
 */
 
+:root {
+  --cor-titulo: rgb(44, 44, 44);
+}
+
 /* Reset de propriedades */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+button { border: solid white; }
 
 /* Configurações gerais */
 .grid-layout {
@@ -267,14 +273,14 @@ main .banner {
   font-family: 'Bebas Neue', cursive;
   font-size: 22px;
   letter-spacing: 0.8px;
-  color: rgb(44, 44, 44);
+  color: var(--cor-titulo);
 }
 
 .products .info h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 900;
-  color: rgb(44, 44, 44);
+  color: var(--cor-titulo);
 }
 
 .products .info p {
@@ -302,10 +308,118 @@ main .banner {
 }
 
 .products .product-category .see-all {
-  color:rgb(44, 44, 44);
+  color:var(--cor-titulo);
   font-weight: 500;
 }
 
 .products .product-category .computer { width: 65%; }
 
 .products .product-category .cellphone { width: 35%; }
+
+/* Section Setores */
+.sectors {
+  background-color: rgb(233, 222, 235);
+}
+
+.sectors .sectors-flex {
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.sectors .info {
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectors .info h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.sectors .info h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+}
+
+.sectors .sector {
+  padding: 2.5vh 5%;
+  width: 100%;
+  height: 32vh;
+  background-color: white;
+  box-shadow: 0 0 5px 3px rgba(158, 158, 158, 0.3);
+  border-radius: 1%;
+}
+
+.sectors .sector h3 {
+  font-size: 26px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(24, 24, 24);
+}
+
+.sector p {
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  color: gray;
+}
+
+.sector .tablet p, .sector .clock p {
+  color: black !important;
+}
+
+.sectors .cellphone, .sectors .notebook {
+  height: 53vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectors .sector .title {
+  height: 40%;
+  position: relative;
+}
+
+.sectors .sector button {
+  width: 55%;
+  height: 50px;
+  border-color: palevioletred;
+  border-width: 2px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: palevioletred;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.sectors .tablet, .sectors .clock {
+  position: relative;
+  overflow: hidden;
+}
+
+.sectors .clock img {
+  position: absolute;
+  left: 15%;
+  top: 28%;
+}
+
+.sectors .cellphone img {
+  width: 117vw;
+  position: absolute;
+  right: -10vw;
+  bottom: -18px;
+}
+
+.sectors .notebook img {
+  position: absolute;
+  left: -12vw;
+}
