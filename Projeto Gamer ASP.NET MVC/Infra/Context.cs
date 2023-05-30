@@ -14,7 +14,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Infra
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {
-                optionsBuilder.UseSqlServer("Data Source = NOTE02-S14; initial catalog = gamerFullStack; Integrated Security = true; TrustServerCertificate = true");
+                optionsBuilder.UseSqlServer("Data Source = NOTE02-S14; initial catalog = gamerFullStack; User Id = sa; pwd = Senai@134; TrustServerCertificate = true");
             }
         }
 
