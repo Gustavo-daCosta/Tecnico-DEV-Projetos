@@ -31,18 +31,39 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             return View("Error!");
         }
 
+        [Route("Cadastrar")]
         public IActionResult Cadastrar(IFormCollection form) {
             Equipe novaEquipe = new Equipe();
 
             novaEquipe.Nome = form["Nome"].ToString();
-            novaEquipe.Imagem = form["Imagem"].ToString();
+            novaEquipe.Imagem = form["Imagem"].ToString();  
+
+            // Aqui começa a lógica do upload de imagem
+            if (form.Files.Any()) {
+                var file = form.Files[0];
+
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+
+                if (!Directory.Exists(folder)) {
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(folder, file.FileName);
+
+                using (var stream = new FileStream(path, FileMode.Create)) {
+                    file.CopyTo(stream);
+                }
+
+                novaEquipe.Imagem = file.FileName;
+            }
+            
 
             context.Equipe.Add(novaEquipe);
             // c.Add(novaEquipe) - Isso também funciona
 
             context.SaveChanges();
 
-            ViewBag.Equipe = context.Equipe.ToList();
+            ViewBag.Equipe = context.Equipe;
 
             return LocalRedirect("~/Equipe/Listar");
         }
