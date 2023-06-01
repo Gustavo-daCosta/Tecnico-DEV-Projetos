@@ -89,5 +89,40 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             ViewBag.Equipe = equipe;
             return View("Edit");
         }
+
+        [Route("Atualizar")]
+        public IActionResult Atualizar(IFormCollection form, Equipe e) {
+            Equipe novaEquipe = new Equipe();
+            novaEquipe.Nome = e.Nome;
+
+            if (form.Files.Any()) {
+                var file = form.Files[0];
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipe");
+
+                if (!Directory.Exists(folder)) {
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(folder, file.FileName);
+
+                using (var stream = new FileStream(path, FileMode.Create)) {
+                    file.CopyTo(stream);
+                }
+
+                novaEquipe.Imagem = file.FileName;
+            } else {
+                novaEquipe.Imagem = "padrão.jpg";
+            }
+
+            Equipe equipe = context.Equipe.First(x => x.IdEquipe == e.IdEquipe);
+
+            equipe.Nome = novaEquipe.Nome;
+            equipe.Imagem = novaEquipe.Imagem;
+
+            context.Equipe.Update(equipe);
+            context.SaveChanges();
+
+            return LocalRedirect("~/Equipe/Listar");
+        }
     }
 }
