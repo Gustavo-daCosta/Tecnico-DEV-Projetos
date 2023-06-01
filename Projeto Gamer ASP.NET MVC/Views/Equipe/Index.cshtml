@@ -6,12 +6,12 @@
 
 <h1>Tela de equipes</h1>
 
-<form method="post" action="@Url.Action("Cadastrar")" enctype="multipart/form-data">
+<form method="post" action="@Url.Action("Cadastrar")" enctype="multipart/form-data" style="display:flex; gap:20px">
     <label for="">Nome</label>
     <input type="text" Name="Nome">
 
     <label for="">Imagem</label>
-    <input type="text" name="Imagem">
+    <input type="file" name="Imagem">
 
     <button type="submit">Cadastrar</button>
 </form>
@@ -21,13 +21,18 @@
         <th>Id</th>
         <th>Nome</th>
         <th>Imagem</th>
+        <th>Ações</th>
     </thead>
     <tbody>
         @foreach (Equipe equipe in ViewBag.Equipe) {
             <tr>
                 <td>@equipe.IdEquipe</td>
                 <td>@equipe.Nome</td>
-                <td>@equipe.Imagem</td>
+                <td><img src="/img/Equipes/@equipe.Imagem" alt="" width="70px" height="70px"></td>
+                <td>
+                    <a style="text-decoration: none; color:black; border: 2px solid black; border-radius: 5px; padding: 4px 6px" asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
+                    <a style="text-decoration: none; color:black; border: 2px solid black; border-radius: 5px; padding: 4px 6px" asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">Editar</a>
+                </td>
             </tr>
         }
     </tbody>

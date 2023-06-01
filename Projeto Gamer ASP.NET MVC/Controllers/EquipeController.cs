@@ -36,7 +36,11 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             Equipe novaEquipe = new Equipe();
 
             novaEquipe.Nome = form["Nome"].ToString();
-            novaEquipe.Imagem = form["Imagem"].ToString();  
+            novaEquipe.Imagem = form["Imagem"].ToString();
+
+            if (string.IsNullOrEmpty(novaEquipe.Nome.Trim())) {
+                return LocalRedirect("~/Equipe/Listar");
+            }
 
             // Aqui começa a lógica do upload de imagem
             if (form.Files.Any()) {
@@ -66,6 +70,24 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             ViewBag.Equipe = context.Equipe;
 
             return LocalRedirect("~/Equipe/Listar");
+        }
+
+        [Route("Excluir/{id}")]
+        public IActionResult Excluir(int id) {
+            Equipe equipe = context.Equipe.First(x => x.IdEquipe == id);
+
+            context.Equipe.Remove(equipe);
+
+            context.SaveChanges();
+
+            return LocalRedirect("~/Equipe/Listar");
+        }
+
+        [Route("/Editar/{id}")]
+        public IActionResult Editar(int id) {
+            Equipe equipe = context.Equipe.First(x => x.IdEquipe == id);
+            ViewBag.Equipe = equipe;
+            return View("Edit");
         }
     }
 }
