@@ -1,0 +1,48 @@
+@model Jogador
+
+@{
+    ViewData["Title"] = "Jogador";
+}
+
+<h1>Tela de Jogadores</h1>
+
+<form method="post" action="@Url.Action("Cadastrar")" enctype="multipart/form-data">
+    <label for="">Nome</label>
+    <input type="text" Name="Nome">
+
+    <label for="">Email</label>
+    <input type="email" name="Email">
+
+    <label for="">Senha</label>
+    <input type="password" name="Senha">
+
+    <select name="Equipe">
+        <option value="">Selecione uma equipe</option>
+        @foreach (Equipe equipe in ViewBag.Equipe) {
+            <option value="@equipe.IdEquipe">@equipe.Nome</option>
+        }
+    </select>
+</form>
+
+<table class="table table-striped table-responsive">
+    <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Equipe</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+        @foreach (Jogador jogador in ViewBag.Jogador) {
+            @{
+                string timeImagePath = 
+            }
+            <tr>
+                <td>@jogador.IdJogador</td>
+                <td>@jogador.Nome</td>
+                <td>@jogador.Email</td>
+                <td><img src="@jogador.IdEquipe"></td>
+            </tr>
+        }
+    </tbody>
+</table>

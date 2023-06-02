@@ -46,7 +46,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             if (form.Files.Any()) {
                 var file = form.Files[0];
 
-                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipe");
 
                 if (!Directory.Exists(folder)) {
                     Directory.CreateDirectory(folder);
@@ -59,6 +59,8 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
                 }
 
                 novaEquipe.Imagem = file.FileName;
+            } else {
+                novaEquipe.Imagem = "default.jpg";
             }
             
 
@@ -95,6 +97,8 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             Equipe novaEquipe = new Equipe();
             novaEquipe.Nome = e.Nome;
 
+            Equipe equipe = context.Equipe.First(x => x.IdEquipe == e.IdEquipe);
+
             if (form.Files.Any()) {
                 var file = form.Files[0];
                 var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipe");
@@ -110,14 +114,10 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
                 }
 
                 novaEquipe.Imagem = file.FileName;
-            } else {
-                novaEquipe.Imagem = "padrão.jpg";
+                equipe.Imagem = novaEquipe.Imagem;
             }
 
-            Equipe equipe = context.Equipe.First(x => x.IdEquipe == e.IdEquipe);
-
             equipe.Nome = novaEquipe.Nome;
-            equipe.Imagem = novaEquipe.Imagem;
 
             context.Equipe.Update(equipe);
             context.SaveChanges();

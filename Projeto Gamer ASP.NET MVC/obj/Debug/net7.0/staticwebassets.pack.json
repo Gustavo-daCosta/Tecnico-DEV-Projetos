@@ -17,20 +17,40 @@
       "PackagePath": "staticwebassets\\img\\Equipe\\Cuiabá.png"
     },
     {
-      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipes\\Ibis.jfif",
-      "PackagePath": "staticwebassets\\img\\Equipes\\Ibis.jfif"
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Ibis.jfif",
+      "PackagePath": "staticwebassets\\img\\Equipe\\Ibis.jfif"
     },
     {
-      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipes\\Santo André.png",
-      "PackagePath": "staticwebassets\\img\\Equipes\\Santo André.png"
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Santo André.png",
+      "PackagePath": "staticwebassets\\img\\Equipe\\Santo André.png"
     },
     {
-      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipes\\Vasco.jfif",
-      "PackagePath": "staticwebassets\\img\\Equipes\\Vasco.jfif"
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\São João de Meriti.jpg",
+      "PackagePath": "staticwebassets\\img\\Equipe\\São João de Meriti.jpg"
     },
     {
-      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipes\\padrão.jpg",
-      "PackagePath": "staticwebassets\\img\\Equipes\\padrão.jpg"
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Vasco.jfif",
+      "PackagePath": "staticwebassets\\img\\Equipe\\Vasco.jfif"
+    },
+    {
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\default.jpg",
+      "PackagePath": "staticwebassets\\img\\Equipe\\default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\padrão.jpg",
+      "PackagePath": "staticwebassets\\img\\Equipe\\padrão.jpg"
+    },
+    {
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\totodile-pokemon.gif",
+      "PackagePath": "staticwebassets\\img\\Equipe\\totodile-pokemon.gif"
+    },
+    {
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\totodile-pokemon.jpg",
+      "PackagePath": "staticwebassets\\img\\Equipe\\totodile-pokemon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\totodile-pokemon.png",
+      "PackagePath": "staticwebassets\\img\\Equipe\\totodile-pokemon.png"
     },
     {
       "Id": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\js\\site.js",
