@@ -11,6 +11,10 @@
   <header class="header-flex grid-layout">
     <div class="header-top">
       <h1 class="header-title">Relap</h1>
+      <!-- Visível apenas no desktop -->
+      <div class="search-bar desktop">
+        <input type="text" placeholder="Search">
+      </div>
       <div class="action-buttons">
         <a class="action">
           <img src="assets/icons/favorite.svg" alt="Ícone de coração">
@@ -19,14 +23,51 @@
           <img src="assets/icons/shopping-cart.svg" alt="Ícone de carrinho de supermercado">
           <div class="items-counter"><p>0</p></div>
         </a>
-        <a class="menu action">
+        <a onclick="mostrarMenu()" class="menu action">
           <img src="assets/icons/menu.svg" alt="Ícone Hamburguer de menu">
         </a>
       </div>
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search">
+    <!-- Visível apenas no mobile -->
+    <div class="header-bottom">
+      <div class="search-bar mobile">
+        <input type="text" placeholder="Search">
+      </div>
     </div>
+
+    <section class="menu-bar" id="menu-bar">
+      <div class="menu-flex">
+        <article class="pages">
+          <div class="page">
+            <h3><a href="">Store</a></h3>
+          </div>
+          <div class="page">
+            <h3><a href="">Features</a></h3>
+          </div>
+          <div class="page">
+            <h3><a href="">About</a></h3>
+          </div>
+          <div class="page">
+            <h3><a href="">Blog</a></h3>
+          </div>
+          <div class="page">
+            <h3><a href="">News</a></h3>
+          </div>
+        </article>
+        <article class="bottom-info">
+          <div class="social-media">
+            <div class="facebook"><img src="assets/icons/facebook.svg" alt=""></div>
+            <div class="twitter"><img src="assets/icons/twitter.svg" alt=""></div>
+            <div class="instagram"><img src="assets/icons/instagram.svg" alt=""></div>
+          </div>
+          <div class="payments-methods">
+            <div class="paypal"><img src="assets/icons/paypal.svg" alt=""></div>
+            <div class="visa"><img src="assets/icons/visa.svg" alt=""></div>
+            <div class="mastercard"><img src="assets/icons/mastercard.svg" alt=""></div>
+          </div>
+        </article>
+      </div>
+    </section>
   </header>
 
   <main>
@@ -208,9 +249,9 @@
         </div>
       </section>
     </div>
-    <hr class="footer-divider"> <!-- DIVIDER -->
+    <hr class="footer-divider">
     <div class="grid-layout">
-      <p class="copyright">Copyright 2019. All Rights Reserved.</p>
+      <p class="copyright desktop">Copyright 2019. All Rights Reserved.</p>
       <section class="bottom-info">
         <div class="social-media">
           <div class="facebook"><img src="assets/icons/facebook.svg" alt=""></div>
@@ -223,7 +264,10 @@
           <div class="mastercard"><img src="assets/icons/mastercard.svg" alt=""></div>
         </div>
       </section>
+      <p class="copyright mobile">Copyright 2019. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>
