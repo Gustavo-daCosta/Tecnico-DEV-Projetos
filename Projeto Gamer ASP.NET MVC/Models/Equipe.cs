@@ -10,11 +10,5 @@ namespace Projeto_Gamer_ASP.NET_MVC.Models
         public string? Imagem { get; set; }
 
         public ICollection<Jogador>? Jogador { get; set; }
-
-        public static void Cadastrar(Equipe equipe) {}
-
-        // public List<Equipe> Listar() {}
-
-
     }
 }
