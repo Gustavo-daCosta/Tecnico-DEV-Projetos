@@ -40,6 +40,17 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             return LocalRedirect("~/Jogador/Listar");
         }
 
+        [Route("Editar/{id}")]
+        public IActionResult Editar(int id) {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
+            ViewBag.Equipe = context.Equipe.ToList();
+            Jogador jogador = context.Jogador.First(x => x.IdJogador == id);
+            ViewBag.Jogador = jogador;
+
+            return View("Edit");
+        }
+
         [Route("Atualizar")]
         public IActionResult Atualizar(IFormCollection form, Jogador jogador) {
             Jogador novoJogador = new Jogador();
@@ -50,7 +61,17 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             novoJogador.Senha = form["Senha"].ToString();
             novoJogador.IdEquipe = int.Parse(form["IdEquipe"].ToString());
 
-            return 
+            Jogador jogadorBuscado = context.Jogador.First(x => x.IdJogador == novoJogador.IdJogador);
+
+            jogadorBuscado.Nome = novoJogador.Nome;
+            jogadorBuscado.Email = novoJogador.Email;
+            jogadorBuscado.Senha = novoJogador.Senha;
+            jogadorBuscado.IdEquipe = novoJogador.IdEquipe;
+
+            context.Jogador.Update(jogadorBuscado);
+            context.SaveChanges();
+
+            return LocalRedirect("~/Jogador/Listar");
         }
 
         [Route("Excluir/{id}")]
@@ -67,6 +88,11 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
         public IActionResult Error()
         {
             return View("Error!");
+        }
+
+        public static implicit operator JogadorController(Jogador v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

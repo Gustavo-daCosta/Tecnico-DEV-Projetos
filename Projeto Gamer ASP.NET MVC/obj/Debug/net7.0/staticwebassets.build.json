@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RCMtB2yuo8An86lMWvxnNfpI0UL3kUUCEQeLCLs3DLQ=",
+  "Hash": "PMDiIjKxuQOuka0w/5a6nwevRoi7qb9rcxz+Fi7LOGw=",
   "Source": "Projeto Gamer ASP.NET MVC",
   "BasePath": "_content/Projeto Gamer ASP.NET MVC",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Cuiabá.jfif",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "img/Equipe/Cuiabá.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipe\\Cuiabá.jfif"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Cuiabá.png",
@@ -185,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Equipe\\São João de Meriti.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\São-João-de-Meriti.jfif",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "img/Equipe/São-João-de-Meriti.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipe\\São-João-de-Meriti.jfif"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\totodile-pokemon.gif",

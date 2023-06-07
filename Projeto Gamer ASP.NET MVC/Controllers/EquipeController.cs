@@ -19,6 +19,8 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
         [Route("Listar")] // https://localhost/Equipe/Listar
         public IActionResult Index()
         {
+            // Pega os dados do jogador logado
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             // A ViewBag é uma "bolsa" para guardar instâncias do objeto Equipe, como uma lista
             ViewBag.Equipe = context.Equipe.ToList();
             // Retorna a View de equipe
@@ -36,7 +38,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             Equipe novaEquipe = new Equipe();
 
             novaEquipe.Nome = form["Nome"].ToString();
-              novaEquipe.Imagem = form["Imagem"].ToString();
+            novaEquipe.Imagem = form["Imagem"].ToString();
 
             if (string.IsNullOrEmpty(novaEquipe.Nome.Trim())) {
                 return LocalRedirect("~/Equipe/Listar");
@@ -87,6 +89,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
 
         [Route("/Editar/{id}")]
         public IActionResult Editar(int id) {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             Equipe equipe = context.Equipe.First(x => x.IdEquipe == id);
             ViewBag.Equipe = equipe;
             return View("Edit");
