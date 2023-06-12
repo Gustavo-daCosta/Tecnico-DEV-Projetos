@@ -19,21 +19,24 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li> *@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Index">Equipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="Index">Jogadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
-                        </li>
+                        @if (!string.IsNullOrEmpty(ViewBag.UserName)) { // se a conta existe
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Index">Equipes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="Index">Jogadores</a>
+                            </li>
+                            <li class="nav-item">
+                                <p class="nav-link text-dark">Olá <strong>@ViewBag.UserName</strong>, seja bem vindo!</p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
+                            </li>
+                        } else {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
