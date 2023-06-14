@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eYFGw+Ogl4PuALROeZ3BsMK2Z7OuUTK7CCnNjvwDfEs=",
+  "Hash": "22Kz2d263btmmItSkUmqiBDL4jIlwerm9OkA4nMK1zo=",
   "Source": "Projeto Gamer ASP.NET MVC",
   "BasePath": "_content/Projeto Gamer ASP.NET MVC",
   "Mode": "Default",
@@ -1052,6 +1052,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\vector-user.svg"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\header-footer.css",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "css/header-footer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\header-footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\login.css",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\site.css",
