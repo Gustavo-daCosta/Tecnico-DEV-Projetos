@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "22Kz2d263btmmItSkUmqiBDL4jIlwerm9OkA4nMK1zo=",
+  "Hash": "faqtfWmSKlyoFfsbfK/7R2GUanvrpi2kFqcvyGQUMaM=",
   "Source": "Projeto Gamer ASP.NET MVC",
   "BasePath": "_content/Projeto Gamer ASP.NET MVC",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\Botao_voltar_ao_topo.svg"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\assets\\edit.svg",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "assets/edit.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\edit.svg"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\assets\\envelope-icon.png",
@@ -1054,6 +1071,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\vector-user.svg"
     },
     {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\equipe.css",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "css/equipe.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\equipe.css"
+    },
+    {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\header-footer.css",
       "SourceId": "Projeto Gamer ASP.NET MVC",
       "SourceType": "Discovered",
@@ -1069,6 +1103,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\header-footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\home.css",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "css/home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\home.css"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\jogador.css",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "css/jogador.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\jogador.css"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\css\\login.css",
