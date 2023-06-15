@@ -4,7 +4,33 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edição de Equipes</h2>
+<link rel="stylesheet" href="~/css/equipe.css">
+
+<!-- MAIN -->
+<main>
+    <section class="container-grid cadastro-equipes">
+        <form class="frm-cad-equipe" method="post" action="@Url.Action("Atualizar")" enctype="multipart/form-data" style="display:flex; gap:20px">
+            <div class="cadequipe-titulo">
+                <h1>Editar Equipe</h1>
+                <hr>
+            </div>
+            <input type="hidden" name="IdEquipe" value="@ViewBag.Equipe.IdEquipe">
+
+            <input class="campo-entrada" type="text" name="Nome" placeholder="Digite o nome da sua equipe:" value="@ViewBag.Equipe.Nome" required>
+            <label class="foto" for="">
+                Nenhuma imagem selecionada...
+                <input  type="file" id="foto-file" name="Imagem" value="@ViewBag.Equipe.Imagem">
+            </label>
+            
+            <button type="submit">Cadastro</button>
+        </form>
+    </section>
+</main>
+
+
+
+
+@* <h2>Edição de Equipes</h2>
 
 @if (string.IsNullOrEmpty(ViewBag.UserName)) {
     <h2>Faça login para ter acesso a página</h2>
@@ -21,4 +47,4 @@
 
         <button type="submit">Atualizar</button>
     </form>
-}
+} *@

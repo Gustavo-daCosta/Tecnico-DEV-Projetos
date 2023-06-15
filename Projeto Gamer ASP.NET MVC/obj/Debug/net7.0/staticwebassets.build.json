@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "faqtfWmSKlyoFfsbfK/7R2GUanvrpi2kFqcvyGQUMaM=",
+  "Hash": "uvQ0HmRawKJy1rw1jn788GsTvYEisLnInIPcY3bK5FY=",
   "Source": "Projeto Gamer ASP.NET MVC",
   "BasePath": "_content/Projeto Gamer ASP.NET MVC",
   "Mode": "Default",
@@ -1647,6 +1647,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Equipe\\Ibis.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\Juazeirense.jfif",
+      "SourceId": "Projeto Gamer ASP.NET MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer ASP.NET MVC",
+      "RelativePath": "img/Equipe/Juazeirense.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipe\\Juazeirense.jfif"
     },
     {
       "Identity": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\Projeto Gamer ASP.NET MVC\\wwwroot\\img\\Equipe\\padrão.jpg",
