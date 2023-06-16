@@ -33,23 +33,23 @@ namespace Projeto_Gamer_ASP.NET_MVC.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdEquipe = table.Column<int>(type: "int", nullable: false),
-                    EquipeIdEquipe = table.Column<int>(type: "int", nullable: true)
+                    IdEquipe = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Jogador", x => x.IdJogador);
                     table.ForeignKey(
-                        name: "FK_Jogador_Equipe_EquipeIdEquipe",
-                        column: x => x.EquipeIdEquipe,
+                        name: "FK_Jogador_Equipe_IdEquipe",
+                        column: x => x.IdEquipe,
                         principalTable: "Equipe",
-                        principalColumn: "IdEquipe");
+                        principalColumn: "IdEquipe",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Jogador_EquipeIdEquipe",
+                name: "IX_Jogador_IdEquipe",
                 table: "Jogador",
-                column: "EquipeIdEquipe");
+                column: "IdEquipe");
         }
 
         /// <inheritdoc />

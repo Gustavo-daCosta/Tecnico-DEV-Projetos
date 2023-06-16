@@ -34,6 +34,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             novoJogador.Email = form["Email"].ToString();
             novoJogador.Senha = form["Senha"].ToString();
             novoJogador.IdEquipe = int.Parse(form["IdEquipe"].ToString());
+            novoJogador.Equipe = context.Equipe.First(x => x.IdEquipe == novoJogador.IdEquipe);
 
             context.Jogador.Add(novoJogador);
             context.SaveChanges();
@@ -60,6 +61,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             novoJogador.Email = form["Email"].ToString();
             novoJogador.Senha = form["Senha"].ToString();
             novoJogador.IdEquipe = int.Parse(form["IdEquipe"].ToString());
+            novoJogador.Equipe = context.Equipe.First(x => x.IdEquipe == novoJogador.IdEquipe);
 
             Jogador jogadorBuscado = context.Jogador.First(x => x.IdJogador == novoJogador.IdJogador);
 
@@ -67,6 +69,7 @@ namespace Projeto_Gamer_ASP.NET_MVC.Controllers
             jogadorBuscado.Email = novoJogador.Email;
             jogadorBuscado.Senha = novoJogador.Senha;
             jogadorBuscado.IdEquipe = novoJogador.IdEquipe;
+            jogadorBuscado.Equipe = novoJogador.Equipe;
 
             context.Jogador.Update(jogadorBuscado);
             context.SaveChanges();
