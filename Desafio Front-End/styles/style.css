@@ -214,9 +214,10 @@ header .menu-bar .menu-flex {
 }
 
 /* MAIN */
-/* BANNER */
+main { padding-top: 105px; }
+
+/* MAIN - BANNER */
 main .banner {
-  padding-top: 8vh;
   width: 100%;
   height: calc(100vh - 105px);
 
@@ -692,4 +693,25 @@ footer .bottom-info {
   width: 45px;
   height: 25px;
   padding: 1px 5px;
+}
+
+
+/* MEDIA QUERIES - RESPONSIVIDADE */
+
+
+/* DESKTOP (>= 1200px) */
+@media screen and (min-width: 1200px) {
+  .grid-layout {
+    width: 80%;
+  }
+
+  /* Impossibilita o menu lateral de aparecer */
+  .mostrar-menu, .menu-bar { display: none; }
+  html {
+    width: 100vw;
+  }
+
+  header {
+    position: static;
+  }
 }
