@@ -38,10 +38,11 @@ BEGIN
 	ELSE
 		SELECT @Descricao = ('O gênero ' + @NomeAntigo + ' foi deletado')
 
-	INSERT INTO Historico(Tabela, Descricao, [Data])
-	VALUES ('Genero', @Descricao, GETDATE())
+	INSERT INTO Historico(Tabela, Descricao, [Action], [Data])
+	VALUES ('Genero', @Descricao, @Verificacao, GETDATE())
 END
 
+GO
 -- Cria o Trigger
 CREATE TRIGGER SalvarHistoricoFilme
 ON Filme
@@ -69,13 +70,15 @@ BEGIN
 	SELECT @NomeNovo = Nome FROM INSERTED
 	SELECT @NomeAntigo = Nome FROM DELETED
 
-	IF @Verificacao = 'Update'
+	IF @Verificacao = 'Update' AND @NomeNovo = @NomeAntigo
+		SELECT @Descricao = ('O filme ' + @NomeAntigo + ' foi modificado')
+	ELSE IF @Verificacao = 'Update'
 		SELECT @Descricao = ('O filme ' + @NomeAntigo + ' foi renomeado para ' + @NomeNovo)
 	ELSE IF @Verificacao = 'Insert'
 		SELECT @Descricao = ('O filme ' + @NomeNovo + ' foi inserido')
 	ELSE
 		SELECT @Descricao = ('O filme ' + @NomeAntigo + ' foi deletado')
 
-	INSERT INTO Historico(Tabela, Descricao, [Data])
-	VALUES ('Filme', @Descricao, GETDATE())
+	INSERT INTO Historico(Tabela, Descricao, [Action], [Data])
+	VALUES ('Filme', @Descricao, @Verificacao, GETDATE())
 END

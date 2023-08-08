@@ -1,3 +1,5 @@
 -- Data Query Language
 
-SELECT * FROM 
+SELECT * FROM Genero
+SELECT * FROM Filme
+SELECT * FROM Historico
