@@ -11,7 +11,7 @@ CREATE TABLE TiposDeUsuario(
 	TituloTiposUsuario VARCHAR(50) NOT NULL UNIQUE,
 );
 
-CREATE TABLE TipoDeEvento(
+CREATE TABLE TiposDeEvento(
 	IdTipoDeEvento INT PRIMARY KEY IDENTITY,
 	TituloTiposEvento VARCHAR(50) NOT NULL UNIQUE,
 );
@@ -20,7 +20,7 @@ CREATE TABLE Instituicao(
 	IdInstituicao INT PRIMARY KEY IDENTITY,
 	NomeFantasia VARCHAR(80) NOT NULL,
 	CNPJ CHAR(14) NOT NULL UNIQUE,
-	Endereço VARCHAR(60) NOT NULL,
+	Endereco VARCHAR(60) NOT NULL,
 );
 
 CREATE TABLE Usuario(
@@ -33,12 +33,11 @@ CREATE TABLE Usuario(
 
 CREATE TABLE Evento(
 	IdEvento INT PRIMARY KEY IDENTITY,
-	IdTipoDeEvento INT FOREIGN KEY REFERENCES TipoDeEvento(IdTipoDeEvento) NOT NULL,
+	IdTipoDeEvento INT FOREIGN KEY REFERENCES TiposDeEvento(IdTipoDeEvento) NOT NULL,
 	IdInstituicao INT FOREIGN KEY REFERENCES Instituicao(IdInstituicao) NOT NULL,
 	Nome VARCHAR(80) NOT NULL,
 	Descricao VARCHAR(200) NOT NULL,
-	DataEvento DATE NOT NULL,
-	HoraEvento TIME NOT NULL,
+	DataEvento DATETIME NOT NULL,
 );
 
 CREATE TABLE PresencasEvento(
