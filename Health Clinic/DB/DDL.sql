@@ -1,0 +1,66 @@
+-- DDL - Data Definition Language
+
+-- Criar e usar o banco de dados
+CREATE DATABASE HealthClinic
+USE HealthClinic
+
+-- Criar as tabelas
+CREATE TABLE TipoDeUsuario(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY,
+	TituloTipoUsuario VARCHAR(50)
+);
+
+CREATE TABLE Usuario(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoDeUsuario(IdTipoUsuario) NOT NULL,
+	Nome VARCHAR(80) NOT NULL,
+	Email VARCHAR(60) NOT NULL UNIQUE,
+	Senha VARCHAR(64) NOT NULL,
+	Telefone CHAR(11) NOT NULL UNIQUE,
+	CPF CHAR(11) NOT NULL UNIQUE,
+	DataNascimento DATE NOT NULL,
+);
+
+CREATE TABLE Clinica(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	RazaoSocial VARCHAR(100) NOT NULL UNIQUE,
+	Endereco VARCHAR(90) NOT NULL,
+	CNPJ CHAR(14) NOT NULL UNIQUE,
+);
+
+CREATE TABLE Especialidade(
+	IdEspecialidade INT PRIMARY KEY IDENTITY,
+	TituloEspecialidade VARCHAR(80) NOT NULL UNIQUE,
+	OrgaoDaEspecialidade VARCHAR(50) NOT NULL UNIQUE,
+);
+
+CREATE TABLE Medico(
+	IdMedico INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidade) NOT NULL,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	CRM CHAR(5) NOT NULL UNIQUE,
+);
+
+CREATE TABLE Paciente(
+	IdPaciente INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+);
+
+CREATE TABLE Consulta(
+	IdConsulta INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico) NOT NULL,
+	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	Prontuario VARCHAR(120) NOT NULL,
+	Situacao BIT NOT NULL,
+);
+
+CREATE TABLE Comentario(
+	IdComentario INT PRIMARY KEY IDENTITY,
+	IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta) NOT NULL,
+	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	Descricao VARCHAR(200) NOT NULL,
+	[Data] DATE NOT NULL,
+	Exibe BIT NOT NULL,
+);
