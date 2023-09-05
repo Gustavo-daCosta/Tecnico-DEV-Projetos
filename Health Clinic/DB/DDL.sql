@@ -1,36 +1,68 @@
--- DML - Data Manipulation Language
+-- DDL - Data Definition Language
 
+-- Criar e usar o banco de dados
+CREATE DATABASE HealthClinic
 USE HealthClinic
 
--- Inserir os valores
-INSERT INTO TipoDeUsuario(TituloTipoUsuario)
-VALUES ('Paciente'), ('Médico'), ('Administrador')
+-- Criar as tabelas
+CREATE TABLE TipoDeUsuario(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY,
+	TituloTipoUsuario VARCHAR(50)
+);
 
-INSERT INTO Usuario(IdTipoUsuario, Nome, Email, Senha, Telefone, CPF, DataNascimento)
-VALUES (1, 'Eduardo', 'eduardo@email.com', 'Eduardo123', '11546842304', '30145201975', '1992-04-12'),
-(1, 'Beatriz', 'beatriz@email.com', 'Beatriz123', '11345621864', '84882463179', '1998-07-10'),
-(2, 'Carlos', 'carlos@email.com', 'Carlos123', '11965428723', '21678432094', '1988-10-24'),
-(2, 'Maria', 'maria@email.com', 'Maria123', '11235498575', '63521478592', '2000-05-01'),
-(3, 'Gustavo', 'gustavo@email.com', 'Gustao123', '11942315697', '95713456025', '2006-09-15')
+CREATE TABLE Usuario(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoDeUsuario(IdTipoUsuario) NOT NULL,
+	Nome VARCHAR(80) NOT NULL,
+	Email VARCHAR(60) NOT NULL UNIQUE,
+	Senha VARCHAR(64) NOT NULL,
+	Telefone CHAR(11) NOT NULL UNIQUE,
+	CPF CHAR(11) NOT NULL UNIQUE,
+	DataNascimento DATE NOT NULL,
+);
 
-INSERT INTO Clinica(RazaoSocial, Endereco, CNPJ)
-VALUES ('Health Clinic', 'Rua Niterói, 180', '324568')
+CREATE TABLE Clinica(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	RazaoSocial VARCHAR(100) NOT NULL UNIQUE,
+	Endereco VARCHAR(90) NOT NULL,
+	CNPJ CHAR(14) NOT NULL UNIQUE,
+);
 
-INSERT INTO Especialidade(TituloEspecialidade, OrgaoDaEspecialidade)
-VALUES ('Oftalmologista', 'Olhos'),
-('Dermatologista', 'Pele'),
-('Cardiologista', 'Coração')
+CREATE TABLE Especialidade(
+	IdEspecialidade INT PRIMARY KEY IDENTITY,
+	TituloEspecialidade VARCHAR(80) NOT NULL UNIQUE,
+	OrgaoDaEspecialidade VARCHAR(50) NOT NULL UNIQUE,
+);
 
-INSERT INTO Medico(IdUsuario, IdEspecialidade, IdClinica, CRM)
-VALUES (3, 1, 1, '36512'), (4, 2, 1, '79546')
+CREATE TABLE Medico(
+	IdMedico INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidade) NOT NULL,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	CRM CHAR(5) NOT NULL UNIQUE,
+);
 
-INSERT INTO Paciente(IdUsuario)
-VALUES (1), (2)
+CREATE TABLE Paciente(
+	IdPaciente INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+);
 
-INSERT INTO Consulta(IdClinica, IdMedico, IdPaciente, Prontuario, [Data], Situacao)
-VALUES (1, 1, 2, 'Paciente diagnosticado com Tersol no olho esquerdo', CONVERT(DATETIME, '2022-09-25 10:45:00', 121), 1),
-(1, 2, 1, 'Paciente diagnosticado com Dermatite', CONVERT(DATETIME, '2022-10-12 11:30:00', 121), 1)
+CREATE TABLE Consulta(
+	IdConsulta INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico) NOT NULL,
+	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	Prontuario VARCHAR(120) NOT NULL,
+	[Data] DATETIME NOT NULL,
+	Situacao BIT NOT NULL,
+);
 
-INSERT INTO Comentario(IdConsulta, Descricao, Exibe)
-VALUES (1, 'Ótima consulta e médico atencioso', 1),
-(2, 'Consulta boa, porém o médico aparentava estar sem vontade', 1)
+SELECT * FROM Comentario
+
+CREATE TABLE Comentario(
+	IdComentario INT PRIMARY KEY IDENTITY,
+	IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta) NOT NULL,
+	Descricao VARCHAR(200) NOT NULL,
+	[Data] DATETIME DEFAULT GETDATE() NOT NULL,
+	Exibe BIT NOT NULL,
+);
