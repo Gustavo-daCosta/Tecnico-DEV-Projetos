@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {}
+    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {
+    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
+        "projectUniqueName": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
         "projectName": "senai.inlock.webapi",
-        "projectPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
+        "projectPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
         "packagesPath": "C:\\Users\\51908518855\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\senai.inlock.webapi\\senai.inlock.webapi\\obj\\",
+        "outputPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\51908518855\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,24 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inlock.webapi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.inlock.webapi.Repositories.JogoRepository.ListarTodos">
+            <summary>
+            teste
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

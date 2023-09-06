@@ -11,10 +11,12 @@ namespace senai.inlock.webapi.Domains
 
         [Required(ErrorMessage = "O e-mail do Usuário é obrigatório")]
         [StringLength(100)]
-        public string Usuario { get; set; }
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "A senha do Usuário é obrigatória")]
         [StringLength(100)]
         public string Senha { get; set; }
+
+        public TipoUsuarioDomain TipoUsuario { get; set; }
     }
 }

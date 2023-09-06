@@ -4,6 +4,6 @@ namespace senai.inlock.webapi.Interfaces
 {
     public interface IUsuarioRepository
     {
-        public UsuarioDomain Login(UsuarioDomain usuario);
+        public UsuarioDomain Login(string email, string senha);
     }
 }
