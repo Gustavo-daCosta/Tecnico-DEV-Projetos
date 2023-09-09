@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai.inlock.webapi.Domains;
 using senai.inlock.webapi.Interfaces;
 using senai.inlock.webapi.Repositories;
@@ -16,6 +17,7 @@ namespace senai.inlock.webapi.Controllers
 
         [HttpGet]
         [Route("ListarTodos")]
+        [Authorize]
         public IActionResult ListarTodos()
         {
             try
@@ -32,6 +34,7 @@ namespace senai.inlock.webapi.Controllers
 
         [HttpPost]
         [Route("Cadastrar")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(JogoDomain jogo)
         {
             try
@@ -47,6 +50,7 @@ namespace senai.inlock.webapi.Controllers
         }
 
         [HttpDelete("Deletar/{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Deletar(int id)
         {
             try

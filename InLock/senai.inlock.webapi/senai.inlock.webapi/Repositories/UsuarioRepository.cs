@@ -79,6 +79,8 @@ namespace senai.inlock.webapi.Repositories
             return listaUsuarios;
         }
 
+        public UsuarioDomain BuscarPorId(int id) => ListarTodos().FirstOrDefault(usuario => usuario.IdUsuario == id);
+
         public void Cadastrar(UsuarioDomain usuario)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

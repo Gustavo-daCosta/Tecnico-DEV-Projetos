@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using senai.inlock.webapi.Domains;
 using senai.inlock.webapi.Interfaces;
@@ -32,9 +33,9 @@ namespace senai.inlock.webapi.Controllers
 
                 var claims = new[]
                 {
-                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Jti, usuario.IdUsuario.ToString()),
-                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Email, usuario.Email),
-                    new Claim(ClaimTypes.Role, usuario.TipoUsuario.Titulo.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
+                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.Titulo.ToString()),
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-games-webapi-authentication-key"));
@@ -51,6 +52,23 @@ namespace senai.inlock.webapi.Controllers
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                 });
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("ListarTodos")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult ListarTodos()
+        {
+            try
+            {
+                List<UsuarioDomain> listaUsuarios = _usuarioRepository.ListarTodos();
+
+                return StatusCode(200, listaUsuarios);
             }
             catch (Exception error)
             {

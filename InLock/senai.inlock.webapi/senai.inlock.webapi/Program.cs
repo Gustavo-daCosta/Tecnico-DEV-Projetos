@@ -17,26 +17,13 @@ builder.Services.AddAuthentication(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            // Valida quem está solicitando
             ValidateIssuer = true,
-
-            // Valida quem está recebendo
             ValidateAudience = true,
-
-            // Define se o tempo de expiração do token será validado
             ValidateLifetime = true,
-
-            // Forma de criptografia e ainda validação da chave de autenticação
-            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao-webapi-dev")),
-
-            // Valida o tempo de expiração do token
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-games-key-auth-webapi-dev")),
             ClockSkew = TimeSpan.FromMinutes(5),
-
-            // De onde está vindo (issuer)
-            ValidIssuer = "webapi.filmes.tarde",
-
-            // Para onde está indo (audience)
-            ValidAudience = "webapi.filmes.tarde",
+            ValidIssuer = "senai.inlock.webapi",
+            ValidAudience = "senai.inlock.webapi",
         };
     });
 
