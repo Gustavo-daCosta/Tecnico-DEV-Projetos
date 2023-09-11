@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\macie\\OneDrive\\Área de Trabalho\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {}
+    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\macie\\OneDrive\\Área de Trabalho\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {
+    "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\macie\\OneDrive\\Área de Trabalho\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
+        "projectUniqueName": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
         "projectName": "senai.inlock.webapi",
-        "projectPath": "C:\\Users\\macie\\OneDrive\\Área de Trabalho\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
-        "packagesPath": "C:\\Users\\macie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\macie\\OneDrive\\Área de Trabalho\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\obj\\",
+        "projectPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\senai.inlock.webapi.csproj",
+        "packagesPath": "C:\\Users\\51908518855\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\51908518855\\Desktop\\Tecnico-DEV-Projetos\\InLock\\senai.inlock.webapi\\senai.inlock.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\macie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\51908518855\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

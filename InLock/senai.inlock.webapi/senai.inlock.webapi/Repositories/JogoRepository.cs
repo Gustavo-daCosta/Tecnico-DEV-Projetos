@@ -4,10 +4,25 @@ using System.Data.SqlClient;
 
 namespace senai.inlock.webapi.Repositories
 {
+    /// <summary>
+    /// Classe referente a implementação da classe da entidade Jogo
+    /// </summary>
     public class JogoRepository : IJogoRepository
     {
-        private string StringConexao = "Data Source = DESKTOP-SN4RF4J\\SQLEXPRESS; Initial Catalog = InLock_Games; User Id = sa; Pwd = Senai@134";
+        /// <summary>
+		/// String de conexão com o banco de dados que recebe os seguintes parâmetros:
+		/// Data Source : Nome do servidor do banco
+		/// Initial Catalog: Nome do banco de dados
+		/// Autenticação
+		///     - windows : Integrated Security = True
+		///     - SqlServer : User Id = sa; Pwd = Senha
+		/// </summary>
+        private string StringConexao = "Data Source = NOTE11-S14; Initial Catalog = InLock_Games; User Id = sa; Pwd = Senai@134";
 
+        /// <summary>
+        /// Cadastrar um novo Jogo
+        /// </summary>
+        /// <param name="jogo">Jogo a ser cadastrado</param>
         public void Cadastrar(JogoDomain jogo)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -27,6 +42,10 @@ namespace senai.inlock.webapi.Repositories
             }
         }
 
+        /// <summary>
+        /// Deletar um Jogo existente
+        /// </summary>
+        /// <param name="id">Id do jogo a ser deletado</param>
         public void Deletar(int id)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

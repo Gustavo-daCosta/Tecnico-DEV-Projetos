@@ -4,10 +4,26 @@ using System.Data.SqlClient;
 
 namespace senai.inlock.webapi.Repositories
 {
+    /// <summary>
+    /// Classe referente a implementação da classe da entidade Usuario
+    /// </summary>
     public class UsuarioRepository : IUsuarioRepository
     {
-        private string StringConexao = "Data Source = DESKTOP-SN4RF4J\\SQLEXPRESS; Initial Catalog = InLock_Games; User Id = sa; Pwd = Senai@134";
+        /// <summary>
+		/// String de conexão com o banco de dados que recebe os seguintes parâmetros:
+		/// Data Source : Nome do servidor do banco
+		/// Initial Catalog: Nome do banco de dados
+		/// Autenticação
+		///     - windows : Integrated Security = True
+		///     - SqlServer : User Id = sa; Pwd = Senha
+		/// </summary>
+        private string StringConexao = "Data Source = NOTE11-S14; Initial Catalog = InLock_Games; User Id = sa; Pwd = Senai@134";
 
+        /// <summary>
+        /// Interface do Método para fazer login do Usuário
+        /// </summary>
+        /// <param name="email">E-mail do usuário a ser logado</param>
+        /// <param name="senha">Senha do usuário a ser logado</param>
         public UsuarioDomain Login(string email, string senha)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -45,6 +61,10 @@ namespace senai.inlock.webapi.Repositories
             return null;
         }
 
+        /// <summary>
+        /// Listar todos os Usuários existentes
+        /// </summary>
+        /// <returns>Lista de Usuários</returns>
         public List<UsuarioDomain> ListarTodos()
         {
             List<UsuarioDomain> listaUsuarios = new List<UsuarioDomain>();
@@ -79,8 +99,17 @@ namespace senai.inlock.webapi.Repositories
             return listaUsuarios;
         }
 
+        /// <summary>
+        /// Buscar um objeto através de seu id
+        /// </summary>
+        /// <param name="id">Id do objeto que será buscado</param>
+        /// <returns>Objeto que foi buscado</returns>
         public UsuarioDomain BuscarPorId(int id) => ListarTodos().FirstOrDefault(usuario => usuario.IdUsuario == id);
 
+        /// <summary>
+        /// Cadastrar um novo Usuário
+        /// </summary>
+        /// <param name="usuario">Objeto do Usuário a ser cadastrado</param>
         public void Cadastrar(UsuarioDomain usuario)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

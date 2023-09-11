@@ -38,7 +38,7 @@ namespace senai.inlock.webapi.Controllers
                     new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.Titulo.ToString()),
                 };
 
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-games-webapi-authentication-key"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-games-key-auth-webapi-dev"));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(
                     issuer: "senai.inlock.webapi",
