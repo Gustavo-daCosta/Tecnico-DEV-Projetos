@@ -1,6 +1,12 @@
 async function cadastrar(event) {
     event.preventDefault();
-    
+
+    let nome = document.getElementById('nome').value;
+    let sobrenome = document.getElementById('sobrenome').value;
+    let email = document.getElementById('email').value;
+    let pais = document.getElementById('pais').value;
+    let ddd = document.getElementById('ddd').value;
+    let telefone = document.getElementById('telefone').value; 
     let cep = document.getElementById('cep').value;
     let logradouro = document.getElementById('rua').value;
     let complemento = document.getElementById('complemento').value;
@@ -8,8 +14,8 @@ async function cadastrar(event) {
     let localidade = document.getElementById('cidade').value;
     let uf = document.getElementById('UF').value;
 
-    const urlLocal = "http://127.0.0.1:5500/index.html"
-    const objDados = { cep, logradouro, complemento, bairro, localidade, uf };
+    const urlLocal = "http://localhost:3000/contatos"
+    const objDados = { nome, sobrenome, email, pais, ddd, telefone, cep, logradouro, complemento, bairro, localidade, uf };
 
     try {
         const promise = await fetch(urlLocal, {
